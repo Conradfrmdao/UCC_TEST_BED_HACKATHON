@@ -1,20 +1,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 import Brand from '../components/layout/Brand';
 
+const androidDownload = process.env.ANDROID_APK_URL || 'https://expo.dev/artifacts/eas/sBRTQFOqlqYCFCFY3pLDbtzxY54p_-hnVyk7daGqRiQ.apk';
+
 const roles = [
-  { href: '/child', label: 'For young people', detail: 'Check something that feels wrong, or tell us what happened.', action: 'Open safety check' },
-  { href: '/parent', label: 'For parents', detail: 'Connect your family and see the safety alerts that matter.', action: 'Open family space' },
-  { href: '/admin', label: 'For administrators', detail: 'Review reported threats and investigate emerging scam patterns.', action: 'Open dashboard' }
+  { href: '/child', label: 'For young people', detail: 'Try the message-check, reporting and help experience with synthetic examples.', action: 'Explore the child demo' },
+  { href: '/parent', label: 'For parents', detail: 'Preview family pairing, proportionate alerts and protection preferences.', action: 'Explore the parent demo' }
 ];
 
 export default function Home() {
   return <main className="landing-page">
     <header className="landing-nav">
       <Brand/>
-      <nav aria-label="Landing navigation"><a href="#how-it-helps">How it helps</a><a href="#demo-access">Explore Chinga</a></nav>
-      <Link href="/admin" className="nav-cta">Open dashboard <ArrowRight size={17}/></Link>
+      <nav aria-label="Landing navigation"><a href="#how-it-helps">How it helps</a><a href="#install">Install</a><a href="#privacy">Privacy</a></nav>
+      <a href={androidDownload} className="nav-cta">Download Android</a>
     </header>
 
     <section className="landing-hero">
@@ -25,21 +25,30 @@ export default function Home() {
         <p className="hero-kicker">Built for young people in Uganda</p>
         <h1>A message feels wrong.<br/>Let’s check it together.</h1>
         <p className="hero-summary">A surprise reward. A scholarship fee. Someone asking for a secret code. Chinga gives young people a place to pause, check a message, and ask for help.</p>
-        <div className="hero-actions"><Link href="/child" className="hero-primary">Check a message <ArrowRight/></Link><Link href="/parent" className="hero-secondary">I’m a parent</Link></div>
-        <p className="hero-footnote">Try the prototype with a sample message. Results are simulated.</p>
+        <div className="hero-actions"><a href={androidDownload} className="hero-primary">Download for Android</a><Link href="/child" className="hero-secondary">Try the web demo</Link></div>
+        <p className="hero-footnote">Android 7 or newer · Version 1.3.0 · Frontend prototype with simulated results</p>
       </div>
     </section>
 
     <section className="confidence-strip" id="how-it-helps">
       <div><strong>Check before you act.</strong><p>Bring the message or link that made you stop and think.</p></div>
       <div><strong>You can ask for help.</strong><p>If something already happened, there is a place to explain it.</p></div>
-      <div><strong>Your privacy matters.</strong><p>Parents see relevant alerts, not your entire conversation.</p></div>
+      <div><strong>Your privacy matters.</strong><p>Parents should receive relevant alerts, not entire private conversations.</p></div>
     </section>
 
-    <section className="access-section" id="demo-access">
-      <div className="access-heading"><div><p className="section-kicker">Three spaces. One purpose.</p><h2>A safer next step.</h2></div><p>Explore each role using a demo account. All records are synthetic, and live analysis is still in development.</p></div>
-      <div className="access-grid">{roles.map(({ href, label, detail, action }) => <Link href={href} className="access-card" key={href}><h3>{label}</h3><p>{detail}</p><span>{action}<ArrowRight size={18}/></span></Link>)}</div>
+    <section className="install-section" id="install">
+      <div className="install-copy"><p className="section-kicker">Android test release</p><h2>Install Chinga on your phone.</h2><p>The APK is signed for direct installation and supports common ARM and Intel Android devices running Android 7 or newer.</p><a href={androidDownload} className="hero-primary">Download APK</a></div>
+      <ol className="install-steps">
+        <li><span>01</span><div><strong>Download the APK</strong><p>Open this page on the Android phone and tap Download APK.</p></div></li>
+        <li><span>02</span><div><strong>Allow this installation</strong><p>If Android asks, allow your browser to install this one app. Keep Play Protect enabled.</p></div></li>
+        <li><span>03</span><div><strong>Open Chinga</strong><p>Choose parent or child. Demo verification uses 123456; no SMS is sent.</p></div></li>
+      </ol>
     </section>
-    <footer className="landing-footer"><Brand/><p>UCC Testbed Hackathon 2026 · Working prototype</p><small>Illustrative AI-generated photograph. Reports are not sent to an authority.</small></footer>
+
+    <section className="access-section" id="privacy">
+      <div className="access-heading"><div><p className="section-kicker">Clear about what works</p><h2>Start with a connected family.</h2></div><p>The Android demo can link a parent and child phone using a short-lived, single-use code. Live analysis, VPN filtering, push notifications and report submission are not active in this release.</p></div>
+      <div className="access-grid">{roles.map(({ href, label, detail, action }) => <Link href={href} className="access-card" key={href}><h3>{label}</h3><p>{detail}</p><span>{action}</span></Link>)}</div>
+    </section>
+    <footer className="landing-footer"><Brand/><p>UCC Testbed Hackathon 2026 · Working prototype</p><small>The Android and web experiences use synthetic data. Reports are not sent to an authority. Call 116 opens the phone dialler and the user chooses whether to place the call.</small></footer>
   </main>;
 }

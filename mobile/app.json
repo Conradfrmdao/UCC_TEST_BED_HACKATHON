@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "Chinga",
+    "slug": "chinga-safety",
+    "version": "1.3.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "ug.chinga.safety",
+      "versionCode": 4,
+      "adaptiveIcon": {
+        "backgroundColor": "#102e50",
+        "foregroundImage": "./assets/chinga-foreground.png"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-navigation-bar",
+        {
+          "enforceContrast": true,
+          "hidden": false,
+          "style": "dark"
+        }
+      ],
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "68bc0148-da89-43e0-ac35-22e56197b0cd"
+      }
+    },
+    "owner": "conrad256",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/68bc0148-da89-43e0-ac35-22e56197b0cd"
+    }
+  }
+}

@@ -7,5 +7,5 @@ export const metadata = {
   manifest: '/manifest.webmanifest',
   icons: { icon: '/icon.svg', apple: '/icon.svg' }
 };
-export const viewport = { themeColor: '#071f3a', width: 'device-width', initialScale: 1 };
+export const viewport = { themeColor: '#132d4f', width: 'device-width', initialScale: 1, viewportFit: 'cover' };
 export default function RootLayout({ children }) { return <html lang="en"><body>{children}<ServiceWorker/></body></html>; }
