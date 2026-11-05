@@ -1,0 +1,6 @@
+{
+  "name": "Chinga Child Safety Prototype", "short_name": "Chinga", "description": "A demo child-focused scam checking and reporting experience.",
+  "start_url": "/", "display": "standalone", "background_color": "#f2f6fb", "theme_color": "#071f3a",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }],
+  "share_target": { "action": "/child", "method": "GET", "enctype": "application/x-www-form-urlencoded", "params": { "title": "title", "text": "text", "url": "url" } }
+}

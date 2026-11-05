@@ -1,0 +1,12 @@
+node_modules/
+.next/
+dist/
+.env
+.env.*
+!.env.example
+coverage/
+*.log
+.DS_Store
+backend/src/ai-engine/datasets/downloaded/
+backend/src/ai-engine/models/weights/
+tmp/

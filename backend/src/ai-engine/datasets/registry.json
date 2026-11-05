@@ -1,0 +1,5 @@
+{
+  "downloadStatus": "not_downloaded",
+  "officiallyRecommended": ["PhishTank", "URLhaus", "OpenPhish", "UCI Repository", "Hugging Face phishing models", "Hugging Face spam models"],
+  "additionalCandidates": ["UCI PhiUSIIL", "UCI SMS Spam Collection", "Horizon-Labs/phishing-scam-detector-base", "Synthetic Uganda child scam evaluation set"]
+}

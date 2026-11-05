@@ -1,0 +1,11 @@
+{
+  "analysisId": "demo-001",
+  "mode": "demo",
+  "riskLevel": "high",
+  "riskScore": null,
+  "signals": [],
+  "explanation": "",
+  "recommendedActions": [],
+  "impersonatedOrganisation": null,
+  "relatedCampaignId": null
+}

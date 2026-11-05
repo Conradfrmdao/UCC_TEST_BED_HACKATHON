@@ -1,0 +1,17 @@
+{
+  "name": "@chinga/backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "lint": "node --check src/server.js && node --check src/app.js && node --check src/services/analysis-service.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "@chinga/demo-data": "0.1.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
